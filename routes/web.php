@@ -47,3 +47,4 @@ Route::get('/serviceObtenerConsumos', 'serviceAndroid@serviceObtenerConsumos');
 //Routes from Web Service
 Route::get('/servValidarLogin/{usu}/{passw}', 'serviceAndroid@validarLogin');
 Route::get('/wsultimosConsumos/{dni}', 'serviceAndroid@ultimosConsumosPorDni');
+Route::get('/wscrearusuario/{cNomUsu}/{cLoginUsu}/{cPasswUsu}/{cDni}', 'serviceAndroid@crearUsuario');
