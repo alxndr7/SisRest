@@ -48,3 +48,7 @@ Route::get('/serviceObtenerConsumos', 'serviceAndroid@serviceObtenerConsumos');
 Route::get('/servValidarLogin/{usu}/{passw}', 'serviceAndroid@validarLogin');
 Route::get('/wsultimosConsumos/{dni}', 'serviceAndroid@ultimosConsumosPorDni');
 Route::get('/wscrearusuario/{cNomUsu}/{cLoginUsu}/{cPasswUsu}/{cDni}', 'serviceAndroid@crearUsuario');
+Route::get('/wsobtenercomensales/{id}', 'serviceAndroid@obtenerComensalesPorUsuario');
+Route::get('/wseliminarcomensal/{nCodUsuCom}/{nCodUsuAnd}', 'serviceAndroid@eliminarComensal');
+Route::get('/wsbuscarcomensal/{dni}', 'serviceAndroid@buscarComensal');
+Route::get('/wsagregarcomensalusuario/{nCodUsuAnd}/{nCodCom}', 'serviceAndroid@agregarComensal');

@@ -38,4 +38,36 @@ class serviceAndroid extends Controller
         // return response()->json($ultimosConsumos);
     }
 
+    public function obtenerComensalesPorUsuario(Request $req){
+        // dd($req->usu);
+        $comensales = \DB::select('call obtenerComensalesPorUsuario(?)',array($req->id));
+        //$ultimosPagos = \DB::select('call ultimosPagosPorDniAndroid(?)',array($req->dni));
+        return response()->json(['comensales'=>$comensales]);
+        // return response()->json($ultimosConsumos);
+    }
+
+    public function eliminarComensal(Request $req){
+        // dd($req->usu);
+        $status = \DB::select('call eliminarComensalAndroid(?,?)',array($req->nCodUsuCom,$req->nCodUsuAnd));
+        //$ultimosPagos = \DB::select('call ultimosPagosPorDniAndroid(?)',array($req->dni));
+        return response()->json(['respuesta'=>$status]);
+        // return response()->json($ultimosConsumos);
+    }
+
+    public function buscarComensal(Request $req){
+        // dd($req->usu);
+        $comensal = \DB::select('call pa_android_buscarComensalPorDni(?)',array($req->dni));
+        //$ultimosPagos = \DB::select('call ultimosPagosPorDniAndroid(?)',array($req->dni));
+        return response()->json(['comensal'=>$comensal]);
+        // return response()->json($ultimosConsumos);
+    }
+
+    public function agregarComensal(Request $req){
+        // dd($req->usu);
+        $status = \DB::select('call pa_android_agregarComensalUsuario(?,?)',array($req->nCodUsuAnd,$req->nCodCom));
+        //$ultimosPagos = \DB::select('call ultimosPagosPorDniAndroid(?)',array($req->dni));
+        return response()->json(['respuesta'=>$status]);
+        // return response()->json($ultimosConsumos);
+    }
+
 }
