@@ -76,13 +76,13 @@
                             <div class="input-group">
                                 <span id="dniComensal">
                                 <input type="text" class="form-control" name="dniComensal"
-                                       placeholder="Ingresar DNI a buscar" maxlength="8">
+                                       placeholder="Ingresar DNI" maxlength="8">
                                      <span class="textfieldRequiredMsg">Campo obligatorio.</span>
                                     <span class="textfieldInvalidFormatMsg">Formato invalido.</span>
                                </span>
                             <span class="input-group-btn">
                                               <button type="button" class="btn btn-primary" onclick="buscarComensal();">
-                                                  <i class="fa fa-search"></i></button>
+                                                  <i class="fa fa-cutlery"></i></button>
                                           </span>
 
                             </div>

@@ -16,7 +16,9 @@ class serviceAndroid extends Controller
 
        // dd($req->usu);
        $login = \DB::select('call validarLoginAndroid(?,?)',array($req->usu,$req->passw));
-        return response()->json(['usuario'=>$login]);
+       $dnis = \DB::select('call pa_android_obtenerDnisUsuario(?)',array($login[0]->nCodUsu));
+
+        return response()->json(['usuario'=>$login,'dnis'=>$dnis]);
        // return response()->json($ultimosConsumos);
     }
 
@@ -67,6 +69,14 @@ class serviceAndroid extends Controller
         $status = \DB::select('call pa_android_agregarComensalUsuario(?,?)',array($req->nCodUsuAnd,$req->nCodCom));
         //$ultimosPagos = \DB::select('call ultimosPagosPorDniAndroid(?)',array($req->dni));
         return response()->json(['respuesta'=>$status]);
+        // return response()->json($ultimosConsumos);
+    }
+
+    public function guardarDefault(Request $req){
+        // dd($req->usu);
+        $default = \DB::select('call pa_android_guardarComensalDefault(?,?)',array($req->nCodUsuAnd,$req->nCodCom));
+        //$ultimosPagos = \DB::select('call ultimosPagosPorDniAndroid(?)',array($req->dni));
+        return response()->json(['respuesta'=>$default]);
         // return response()->json($ultimosConsumos);
     }
 
